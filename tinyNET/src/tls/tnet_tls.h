@@ -46,6 +46,7 @@
 TNET_BEGIN_DECLS
 
 typedef void tnet_tls_socket_handle_t;
+typedef struct ssl_ctx_st * ssl_ctx_st_p;
 
 int tnet_tls_socket_connect(tnet_tls_socket_handle_t* self);
 int tnet_tls_socket_accept(tnet_tls_socket_handle_t* self);
@@ -54,7 +55,7 @@ int tnet_tls_socket_write(tnet_tls_socket_handle_t* self, const void* data, tsk_
 int tnet_tls_socket_recv(tnet_tls_socket_handle_t* self, void** data, tsk_size_t *size, tsk_bool_t *isEncrypted);
 
 TINYNET_API tsk_bool_t tnet_tls_is_supported();
-TINYNET_API tnet_tls_socket_handle_t* tnet_tls_socket_create(tnet_fd_t fd, struct ssl_ctx_st* ssl_ctx);
+TINYNET_API tnet_tls_socket_handle_t* tnet_tls_socket_create(tnet_fd_t fd, ssl_ctx_st_p ssl_ctx);
 
 TINYNET_GEXTERN const tsk_object_def_t *tnet_tls_socket_def_t;
 
