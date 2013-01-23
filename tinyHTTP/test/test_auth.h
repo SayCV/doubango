@@ -44,10 +44,10 @@ void test_basic_auth()
 	{
 		size = thttp_auth_basic_response(auth_basic_msgs[i].userid, auth_basic_msgs[i].password, &response);
 		if(tsk_striequals(auth_basic_msgs[i].xres, response)){
-			TSK_DEBUG_INFO("[HTTP_BASIC-%d] ==> OK", i);
+			TSK_DEBUG_INFO("[HTTP_BASIC-%zu] ==> OK", i);
 		}
 		else{
-			TSK_DEBUG_INFO("[HTTP_BASIC-%d] ==> NOK", i);
+			TSK_DEBUG_INFO("[HTTP_BASIC-%zu] ==> NOK", i);
 		}
 	
 		TSK_FREE(response);
@@ -78,10 +78,10 @@ void test_ws_auth()
 	{
 		size = thttp_auth_ws_response(auth_ws_msgs[i].key, &response);
 		if(tsk_striequals(auth_ws_msgs[i].xres, response)){
-			TSK_DEBUG_INFO("[WS_AUTH-%d] ==> OK", i);
+			TSK_DEBUG_INFO("[WS_AUTH-%zu] ==> OK", i);
 		}
 		else{
-			TSK_DEBUG_INFO("[WS_AUTH-%d] ==> NOK", i);
+			TSK_DEBUG_INFO("[WS_AUTH-%zu] ==> NOK", i);
 		}
 	}
 }
@@ -163,10 +163,10 @@ void test_digest_auth()
 			&response);
 
 		if(tsk_striequals(auth_digest_msgs[i].response, response)){
-			TSK_DEBUG_INFO("[HTTP_DIGEST-%d] ==> OK", i);
+			TSK_DEBUG_INFO("[HTTP_DIGEST-%zu] ==> OK", i);
 		}
 		else{
-			TSK_DEBUG_INFO("[HTTP_DIGEST-%d] ==> NOK", i);
+			TSK_DEBUG_INFO("[HTTP_DIGEST-%zu] ==> NOK", i);
 		}
 	}
 }

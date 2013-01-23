@@ -503,7 +503,7 @@ parse_buffer:
 	
 	// If we are there this mean that we have all SIP headers.
 	//	==> Parse the SIP message without the content.
-	TSK_DEBUG_INFO("Receiving SIP o/ WebSocket message: %s", peer->ws_rcv_buffer);
+	TSK_DEBUG_INFO("Receiving SIP o/ WebSocket message: %s",(char*)( peer->ws_rcv_buffer ));
 	tsk_ragel_state_init(&state, peer->ws_rcv_buffer, (tsk_size_t)pay_len);
 	if(tsip_message_parse(&state, &message, tsk_false/* do not extract the content */) == tsk_true){
 		const uint8_t* body_start = (const uint8_t*)state.eoh;

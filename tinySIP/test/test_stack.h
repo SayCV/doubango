@@ -144,7 +144,7 @@ int test_stack_callback(const tsip_event_t *sipevent)
 					case tsip_i_message: /* Incoming MESSAGE */
 						{
 							if(TSIP_MESSAGE_HAS_CONTENT(sipevent->sipmessage)){
-								TSK_DEBUG_INFO("MESSAGE Content: %s", TSIP_MESSAGE_CONTENT(sipevent->sipmessage));
+								TSK_DEBUG_INFO("MESSAGE Content: %s", (char*)(TSIP_MESSAGE_CONTENT(sipevent->sipmessage)));
 							}
 							break;
 						}
@@ -187,7 +187,7 @@ int test_stack_callback(const tsip_event_t *sipevent)
 				case tsip_i_notify: /* Incoming NOTIFY */
 					{
 						if(TSIP_MESSAGE_CONTENT_DATA(sipevent->sipmessage)){
-							TSK_DEBUG_INFO("NOTIFY Content: %s", TSIP_MESSAGE_CONTENT(sipevent->sipmessage));
+							TSK_DEBUG_INFO("NOTIFY Content: %s", (char*)(TSIP_MESSAGE_CONTENT(sipevent->sipmessage)));
 						}
 						break;
 					}

@@ -89,10 +89,10 @@ void test_base64()
 		*/
 		size = tsk_base64_encode((const uint8_t*)b64_msgs[i].ascii, strlen(b64_msgs[i].ascii), &output_e);
 		if(tsk_striequals(b64_msgs[i].base64, output_e)){
-			TSK_DEBUG_INFO("[BASE64-%d encoding] ==> OK", i);
+			TSK_DEBUG_INFO("[BASE64-%zu encoding] ==> OK", i);
 		}
 		else{
-			TSK_DEBUG_INFO("[BASE64-%d encoding] ==> NOK", i);
+			TSK_DEBUG_INFO("[BASE64-%zu encoding] ==> NOK", i);
 		}
 		TSK_FREE(output_e);
 
@@ -101,10 +101,10 @@ void test_base64()
 		*/
 		size = tsk_base64_decode((const uint8_t*)b64_msgs[i].base64, strlen(b64_msgs[i].base64), &output_d);
 		if(tsk_striequals(b64_msgs[i].ascii, output_d)){
-			TSK_DEBUG_INFO("[BASE64-%d decoding] ==> OK", i);
+			TSK_DEBUG_INFO("[BASE64-%zu decoding] ==> OK", i);
 		}
 		else{
-			TSK_DEBUG_INFO("[BASE64-%d decoding] ==> NOK", i);
+			TSK_DEBUG_INFO("[BASE64-%zu decoding] ==> NOK", i);
 		}
 		TSK_FREE(output_d);
 	}
