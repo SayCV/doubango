@@ -2,19 +2,19 @@
 * Copyright (C) 2009 Mamadou Diop.
 *
 * Contact: Mamadou Diop <diopmamadou(at)doubango[dot]org>
-*	
+* 
 * This file is part of Open Source Doubango Framework.
 *
 * DOUBANGO is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
 * (at your option) any later version.
-*	
+* 
 * DOUBANGO is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU Lesser General Public License for more details.
-*	
+* 
 * You should have received a copy of the GNU General Public License
 * along with DOUBANGO.
 *
@@ -37,20 +37,20 @@
 #include "test_dhcp6.h"
 #include "test_tls.h"
 
-#define RUN_TEST_LOOP		0
+#define RUN_TEST_LOOP       0
 
-#define RUN_TEST_ALL		0
-#define RUN_TEST_SOCKETS	0 /* FIXME: Android */
-#define RUN_TEST_TRANSPORT	0
-#define RUN_TEST_AUTH		0
-#define RUN_TEST_STUN		1
-#define RUN_TEST_ICE		0
-#define RUN_TEST_NAT		0
-#define RUN_TEST_IFACES		0
-#define RUN_TEST_DNS		0
-#define RUN_TEST_DHCP		0
-#define RUN_TEST_DHCP6		0
-#define RUN_TEST_TLS		0
+#define RUN_TEST_ALL        1
+#define RUN_TEST_SOCKETS    0 /* FIXME: Android */
+#define RUN_TEST_TRANSPORT  0
+#define RUN_TEST_AUTH       0
+#define RUN_TEST_STUN       1
+#define RUN_TEST_ICE        0
+#define RUN_TEST_NAT        0
+#define RUN_TEST_IFACES     0
+#define RUN_TEST_DNS        0
+#define RUN_TEST_DHCP       0
+#define RUN_TEST_DHCP6      0
+#define RUN_TEST_TLS        0
 
 #ifdef _WIN32_WCE
 int _tmain(int argc, _TCHAR* argv[])
@@ -58,65 +58,65 @@ int _tmain(int argc, _TCHAR* argv[])
 int main()
 #endif
 {
-	/* Startup the network stack. */
-	if(tnet_startup()){
-		return -1;
-	}
+  /* Startup the network stack. */
+  if(tnet_startup()){
+    return -1;
+  }
 
 #if RUN_TEST_LOOP
-	for(;;)
+  for(;;)
 #endif
-	{
-	
+  {
+  
 #if RUN_TEST_ALL  || RUN_TEST_SOCKETS
-		test_sockets();
+    test_sockets();
 #endif
 
 #if RUN_TEST_ALL  || RUN_TEST_TRANSPORT
-		test_transport();
+    test_transport();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_AUTH
-		test_auth();
+    test_auth();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_STUN
-		test_stun();
+    test_stun();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_ICE
-		test_ice();
+    test_ice();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_NAT
-		test_nat();
+    test_nat();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_IFACES
-		test_ifaces();
+    test_ifaces();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_DNS
-		test_dns();
+    test_dns();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_DHCP
-		test_dhcp();
+    test_dhcp();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_DHCP6
-		test_dhcp6();
+    test_dhcp6();
 #endif
 
 #if RUN_TEST_ALL || RUN_TEST_TLS
-		test_tls();
+    test_tls();
 #endif
 
-	}
+  }
 
-	/* Cleanup the network stack */
-	tnet_cleanup();
+  /* Cleanup the network stack */
+  tnet_cleanup();
 
-	return 0;
+  return 0;
 }
 

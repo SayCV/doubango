@@ -31,11 +31,11 @@
 #include "test_imsaka.h"
 
 
-#define RUN_TEST_LOOP		1
+#define RUN_TEST_LOOP		  0 
 
-#define RUN_TEST_ALL		0
-#define RUN_TEST_MESSAGES	1
-#define RUN_TEST_URI		0
+#define RUN_TEST_ALL	    1	
+#define RUN_TEST_MESSAGES 0	
+#define RUN_TEST_URI		  0
 #define RUN_TEST_TRANSAC	0
 #define RUN_TEST_STACK		0
 #define RUN_TEST_IMS_AKA	0
@@ -54,8 +54,6 @@ int main()
 	{
 		/* Print copyright information */
 		printf("Doubango Project\nCopyright (C) 2009 - 2010 Mamadou Diop \n\n");
-
-		
 	
 #if RUN_TEST_ALL  || RUN_TEST_MESSAGES
 		test_messages();
