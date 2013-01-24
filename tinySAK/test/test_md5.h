@@ -52,11 +52,11 @@ void test_md5()
 		tsk_md5compute(msgs_md5[i].msg, strlen(msgs_md5[i].msg), &md5result);
 		if(tsk_striequals(msgs_md5[i].xres, md5result))
 		{
-			TSK_DEBUG_INFO("[MD5-%d] ==> OK", i);
+			TSK_DEBUG_INFO("[MD5-%zu] ==> OK", i);
 		}
 		else
 		{
-			TSK_DEBUG_INFO("[MD5-%d] ==> NOK", i);
+			TSK_DEBUG_INFO("[MD5-%zu] ==> NOK", i);
 		}
 	}
 }
@@ -88,11 +88,11 @@ void test_hmac_md5()
 		hmac_md5_compute((const uint8_t*)msgs_hmac_md5[i].msg, strlen(msgs_hmac_md5[i].msg), msgs_hmac_md5[i].key, strlen(msgs_hmac_md5[i].key), &md5result);
 		if(tsk_striequals(msgs_hmac_md5[i].xres, md5result))
 		{
-			TSK_DEBUG_INFO("[HMAC-MD5-%d] ==> OK", i);
+			TSK_DEBUG_INFO("[HMAC-MD5-%zu] ==> OK", i);
 		}
 		else
 		{
-			TSK_DEBUG_INFO("[HMAC-MD5-%d] ==> NOK", i);
+			TSK_DEBUG_INFO("[HMAC-MD5-%zu] ==> NOK", i);
 		}
 	}
 }

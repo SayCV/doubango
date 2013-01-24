@@ -45,7 +45,7 @@ test_timer_t timers[] =
 static int test_timer_callback(const void* arg, tsk_timer_id_t timer_id)
 {
 	// Do quick job
-	printf("test_timer - id=%llu and arg=%s//\n", timer_id, arg);
+	printf("test_timer - id=%llu and arg=%s//\n", timer_id, (char*)(arg));
 	return 0;
 }
 
